@@ -13,7 +13,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafWebAcl_basic(t *testing.T) {
+func testAccWafWebAcl_basic(t *testing.T) {
 	var v waf.WebACL
 	wafAclName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
 
@@ -42,7 +42,7 @@ func TestAccAWSWafWebAcl_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafWebAcl_changeNameForceNew(t *testing.T) {
+func testAccWafWebAcl_changeNameForceNew(t *testing.T) {
 	var before, after waf.WebACL
 	wafAclName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
 	wafAclNewName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
@@ -88,7 +88,7 @@ func TestAccAWSWafWebAcl_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafWebAcl_changeDefaultAction(t *testing.T) {
+func testAccWafWebAcl_changeDefaultAction(t *testing.T) {
 	var before, after waf.WebACL
 	wafAclName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
 	wafAclNewName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
@@ -134,7 +134,7 @@ func TestAccAWSWafWebAcl_changeDefaultAction(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafWebAcl_disappears(t *testing.T) {
+func testAccWafWebAcl_disappears(t *testing.T) {
 	var v waf.WebACL
 	wafAclName := fmt.Sprintf("wafacl%s", acctest.RandString(5))
 

@@ -14,7 +14,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafByteMatchSet_basic(t *testing.T) {
+func testAccWafByteMatchSet_basic(t *testing.T) {
 	var v waf.ByteMatchSet
 	byteMatchSet := fmt.Sprintf("byteMatchSet-%s", acctest.RandString(5))
 
@@ -37,7 +37,7 @@ func TestAccAWSWafByteMatchSet_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafByteMatchSet_changeNameForceNew(t *testing.T) {
+func testAccWafByteMatchSet_changeNameForceNew(t *testing.T) {
 	var before, after waf.ByteMatchSet
 	byteMatchSet := fmt.Sprintf("byteMatchSet-%s", acctest.RandString(5))
 	byteMatchSetNewName := fmt.Sprintf("byteMatchSet-%s", acctest.RandString(5))
@@ -71,7 +71,7 @@ func TestAccAWSWafByteMatchSet_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafByteMatchSet_disappears(t *testing.T) {
+func testAccWafByteMatchSet_disappears(t *testing.T) {
 	var v waf.ByteMatchSet
 	byteMatchSet := fmt.Sprintf("byteMatchSet-%s", acctest.RandString(5))
 

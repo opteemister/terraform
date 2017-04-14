@@ -13,7 +13,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafRule_basic(t *testing.T) {
+func testAccWafRule_basic(t *testing.T) {
 	var v waf.Rule
 	wafRuleName := fmt.Sprintf("wafrule%s", acctest.RandString(5))
 	resource.Test(t, resource.TestCase{
@@ -37,7 +37,7 @@ func TestAccAWSWafRule_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafRule_changeNameForceNew(t *testing.T) {
+func testAccWafRule_changeNameForceNew(t *testing.T) {
 	var before, after waf.Rule
 	wafRuleName := fmt.Sprintf("wafrule%s", acctest.RandString(5))
 	wafRuleNewName := fmt.Sprintf("wafrulenew%s", acctest.RandString(5))
@@ -75,7 +75,7 @@ func TestAccAWSWafRule_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafRule_disappears(t *testing.T) {
+func testAccWafRule_disappears(t *testing.T) {
 	var v waf.Rule
 	wafRuleName := fmt.Sprintf("wafrule%s", acctest.RandString(5))
 	resource.Test(t, resource.TestCase{

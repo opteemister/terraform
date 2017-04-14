@@ -14,7 +14,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafSizeConstraintSet_basic(t *testing.T) {
+func testAccWafSizeConstraintSet_basic(t *testing.T) {
 	var v waf.SizeConstraintSet
 	sizeConstraintSet := fmt.Sprintf("sizeConstraintSet-%s", acctest.RandString(5))
 
@@ -37,7 +37,7 @@ func TestAccAWSWafSizeConstraintSet_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafSizeConstraintSet_changeNameForceNew(t *testing.T) {
+func testAccWafSizeConstraintSet_changeNameForceNew(t *testing.T) {
 	var before, after waf.SizeConstraintSet
 	sizeConstraintSet := fmt.Sprintf("sizeConstraintSet-%s", acctest.RandString(5))
 	sizeConstraintSetNewName := fmt.Sprintf("sizeConstraintSet-%s", acctest.RandString(5))
@@ -71,7 +71,7 @@ func TestAccAWSWafSizeConstraintSet_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafSizeConstraintSet_disappears(t *testing.T) {
+func testAccWafSizeConstraintSet_disappears(t *testing.T) {
 	var v waf.SizeConstraintSet
 	sizeConstraintSet := fmt.Sprintf("sizeConstraintSet-%s", acctest.RandString(5))
 

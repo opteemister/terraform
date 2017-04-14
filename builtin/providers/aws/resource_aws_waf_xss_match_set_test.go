@@ -14,7 +14,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafXssMatchSet_basic(t *testing.T) {
+func testAccWafXssMatchSet_basic(t *testing.T) {
 	var v waf.XssMatchSet
 	xssMatchSet := fmt.Sprintf("xssMatchSet-%s", acctest.RandString(5))
 
@@ -37,7 +37,7 @@ func TestAccAWSWafXssMatchSet_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafXssMatchSet_changeNameForceNew(t *testing.T) {
+func testAccWafXssMatchSet_changeNameForceNew(t *testing.T) {
 	var before, after waf.XssMatchSet
 	xssMatchSet := fmt.Sprintf("xssMatchSet-%s", acctest.RandString(5))
 	xssMatchSetNewName := fmt.Sprintf("xssMatchSetNewName-%s", acctest.RandString(5))
@@ -71,7 +71,7 @@ func TestAccAWSWafXssMatchSet_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafXssMatchSet_disappears(t *testing.T) {
+func testAccWafXssMatchSet_disappears(t *testing.T) {
 	var v waf.XssMatchSet
 	xssMatchSet := fmt.Sprintf("xssMatchSet-%s", acctest.RandString(5))
 

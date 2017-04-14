@@ -13,7 +13,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafIPSet_basic(t *testing.T) {
+func testAccWafIPSet_basic(t *testing.T) {
 	var v waf.IPSet
 	ipsetName := fmt.Sprintf("ip-set-%s", acctest.RandString(5))
 
@@ -38,7 +38,7 @@ func TestAccAWSWafIPSet_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafIPSet_disappears(t *testing.T) {
+func testAccWafIPSet_disappears(t *testing.T) {
 	var v waf.IPSet
 	ipsetName := fmt.Sprintf("ip-set-%s", acctest.RandString(5))
 	resource.Test(t, resource.TestCase{
@@ -58,7 +58,7 @@ func TestAccAWSWafIPSet_disappears(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafIPSet_changeNameForceNew(t *testing.T) {
+func testAccWafIPSet_changeNameForceNew(t *testing.T) {
 	var before, after waf.IPSet
 	ipsetName := fmt.Sprintf("ip-set-%s", acctest.RandString(5))
 	ipsetNewName := fmt.Sprintf("ip-set-new-%s", acctest.RandString(5))

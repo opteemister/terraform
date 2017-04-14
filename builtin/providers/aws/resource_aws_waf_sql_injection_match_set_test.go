@@ -14,7 +14,7 @@ import (
 	"github.com/hashicorp/terraform/helper/acctest"
 )
 
-func TestAccAWSWafSqlInjectionMatchSet_basic(t *testing.T) {
+func testAccWafSqlInjectionMatchSet_basic(t *testing.T) {
 	var v waf.SqlInjectionMatchSet
 	sqlInjectionMatchSet := fmt.Sprintf("sqlInjectionMatchSet-%s", acctest.RandString(5))
 
@@ -37,7 +37,7 @@ func TestAccAWSWafSqlInjectionMatchSet_basic(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafSqlInjectionMatchSet_changeNameForceNew(t *testing.T) {
+func testAccWafSqlInjectionMatchSet_changeNameForceNew(t *testing.T) {
 	var before, after waf.SqlInjectionMatchSet
 	sqlInjectionMatchSet := fmt.Sprintf("sqlInjectionMatchSet-%s", acctest.RandString(5))
 	sqlInjectionMatchSetNewName := fmt.Sprintf("sqlInjectionMatchSetNewName-%s", acctest.RandString(5))
@@ -71,7 +71,7 @@ func TestAccAWSWafSqlInjectionMatchSet_changeNameForceNew(t *testing.T) {
 	})
 }
 
-func TestAccAWSWafSqlInjectionMatchSet_disappears(t *testing.T) {
+func testAccWafSqlInjectionMatchSet_disappears(t *testing.T) {
 	var v waf.SqlInjectionMatchSet
 	sqlInjectionMatchSet := fmt.Sprintf("sqlInjectionMatchSet-%s", acctest.RandString(5))
 
